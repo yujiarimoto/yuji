@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algo Especial</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Fonte mais divertida e estilizada */
+            text-align: center;
+            background: linear-gradient(135deg, #FFB6C1, #FF69B4); /* Gradiente rosa para fundo estilizado */
+            color: #fff; /* Texto branco para contrastar */
+            padding: 50px;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .page {
+            display: none;
+            background: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente para as páginas */
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .active {
+            display: block;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #FF1493, #FF69B4);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 20px;
+        }
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div id="page1" class="page active">
+        <h1>Oi, quer ver algo especial?</h1>
+        <button onclick="nextPage(2)">Sim</button>
+    </div>
+    
+    <div id="page2" class="page">
+        <h1>Gostaria de sair com um rapaz bonito e elegante?</h1>
+        <button onclick="nextPage(3)">Sim</button>
+    </div>
+    
+    <div id="page3" class="page">
+        <h1>Melhor date da sua vida pescando cmg</h1>
+        <!-- Substitua 'sua-foto-com-peixe.jpg' pelo caminho da sua foto real -->
+        <img src="yujipeixe.jpeg" alt="Você segurando um peixe">
+    </div>
+
+    <script>
+        function nextPage(pageNumber) {
+            // Esconde todas as páginas
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            // Mostra a página desejada
+            document.getElementById('page' + pageNumber).classList.add('active');
+        }
+    </script>
+</body>
+</html>
